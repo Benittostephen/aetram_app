@@ -67,6 +67,9 @@ class _MainNavigationState extends State<MainNavigation> {
                   BottomNavigationBarItem(
                     icon: SizedBox(
                       height: 15,
+
+
+
                       child: Center(
                         child: Icon(Icons.bar_chart_outlined, size: 24),
                       ),
