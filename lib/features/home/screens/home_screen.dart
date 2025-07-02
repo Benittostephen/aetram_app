@@ -31,6 +31,8 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ],
                 ),
+
+
                 // Overlay image on entire section
                 Positioned.fill(
                   child: Padding(
@@ -40,6 +42,8 @@ class HomeScreen extends StatelessWidget {
                         Stack(
                           alignment: Alignment.center,
                           children: [
+
+
                             // Row for left and right buttons
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -52,6 +56,8 @@ class HomeScreen extends StatelessWidget {
                                     BlendMode.srcIn,
                                   ),
                                 ),
+
+
                                 //profile and verification mark
                                 Stack(
                                   children: [
@@ -71,6 +77,9 @@ class HomeScreen extends StatelessWidget {
                                         backgroundColor: Colors.black87,
                                       ),
                                     ),
+
+
+
                                     Positioned(
                                       bottom: 2,
                                       right: 0,
