@@ -18,40 +18,33 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Ink(
       width: isFullWidth ? double.infinity : null,
       decoration: BoxDecoration(
-        gradient:
-            backgroundColor == null
-                ? const LinearGradient(
-                  colors: [
-                    Color(0xFFc07f2f), // Light gold
-                    Color(0xFFe6bc50), // Yellow
-                    Color(0xFFc07f2f),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                )
-                : null, // No gradient if custom background color provided
-        color: backgroundColor, // fallback solid color
+        gradient: const LinearGradient(
+          colors: [
+            Color(0xFFc07f2f), // Light gold
+            Color(0xFFe6bc50), // Yellow
+            Color(0xFFc07f2f),
+          ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
         borderRadius: BorderRadius.circular(50),
       ),
-      child: ElevatedButton(
-        onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.transparent,
-          shadowColor: Colors.transparent,
-          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 24),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(50),
-          ),
-        ),
-        child: Text(
-          text,
-          style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
-            color: textColor ?? Colors.black,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(50),
+        onTap: onPressed,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8.0),
+          child: Text(
+            text,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+              color: textColor ?? Colors.black,
+            ),
           ),
         ),
       ),
